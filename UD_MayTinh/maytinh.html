@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MayTinh</title>
+    <style>
+        .kichthuoc{
+            width: 65px;
+            height: 35px;
+        }
+        .mau{
+            background: white;
+        }
+    </style>
+</head>
+<body>
+<form action="" style="width: 500px">
+    <fieldset>
+        <input type="text"id="result" style="width: 470px;height: 20px ;text-align: right" >
+        <table>
+            <tr>
+                <td><input type="button" class="kichthuoc" value="Rad"></td>
+                <td><input type="button" class="kichthuoc"></td>
+                <td><input type="button" class="kichthuoc" value="x!"></td>
+                <td><input type="button" class="kichthuoc" value="(" id="(" onclick="layGiaTri('(')"></td>
+                <td><input type="button" class="kichthuoc" value=")" id=")" onclick="layGiaTri(')')"></td>
+                <td><input type="button" class="kichthuoc" value="%"></td>
+                <td><input type="button" class="kichthuoc" value="AC" onclick="reset()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="kichthuoc" value="lnv"></td>
+                <td><input type="button" class="kichthuoc" value="sin"></td>
+                <td><input type="button" class="kichthuoc" value="ln"></td>
+                <td><input type="button" class="kichthuoc mau" value="7"id="7"onclick="layGiaTri(7)"></td>
+                <td><input type="button" class="kichthuoc mau" value="8"id="8"onclick="layGiaTri(8)"></td>
+                <td><input type="button" class="kichthuoc mau" value="9"id="9"onclick="layGiaTri(9)"></td>
+                <td><input type="button" class="kichthuoc" value="/" id="/" onclick="layGiaTri('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="kichthuoc" value="π"></td>
+                <td><input type="button" class="kichthuoc" value="sos"></td>
+                <td><input type="button" class="kichthuoc" value="log"></td>
+                <td><input type="button" class="kichthuoc mau"  value="4" id="4"onclick="layGiaTri(4)"></td>
+                <td><input type="button" class="kichthuoc mau"value="5" id="5"onclick="layGiaTri(5)"></td>
+                <td><input type="button" class="kichthuoc mau"value="6" id="6"onclick="layGiaTri(6)"></td>
+                <td><input type="button" class="kichthuoc"value="*" id="*"onclick="layGiaTri('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="kichthuoc"value="e"></td>
+                <td><input type="button" class="kichthuoc" value="tan"></td>
+                <td><input type="button" class="kichthuoc"value="√"></td>
+                <td><input type="button" class="kichthuoc mau"value="1" id="1"onclick="layGiaTri(1)"></td>
+                <td><input type="button" class="kichthuoc mau"value="2"id="2"onclick="layGiaTri(2)"></td>
+                <td><input type="button" class="kichthuoc mau"value="3" id="3"onclick="layGiaTri(3)"></td>
+                <td><input type="button" class="kichthuoc"value="-" id="-"onclick="layGiaTri('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="kichthuoc"value="Ans"></td>
+                <td><input type="button" class="kichthuoc"value="EXP"></td>
+                <td><input type="button" class="kichthuoc"value="x^y"></td>
+                <td><input type="button" class="kichthuoc mau"value="0" id="0" onclick="layGiaTri(0)"></td>
+                <td><input type="button" class="kichthuoc mau"value="."id="."></td>
+                <td><input type="button" class="kichthuoc"value="=" style="background: blue;color: white" id="=" onclick="tinhBieuThuc()"></td>
+                <td><input type="button" class="kichthuoc"value="+" id="+"onclick="layGiaTri('+')"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<script>
+    function layGiaTri(gt) {
+        let giatri=document.getElementById(gt).value;
+        document.getElementById('result').value += giatri;
+    }
+    function tinhBieuThuc() {
+        let kq = document.getElementById('result').value;
+        document.getElementById('result').value = eval(kq);
+    }
+    function reset() {
+        document.getElementById('result').value = '';
+    }
+</script>
+</body>
+</html>
